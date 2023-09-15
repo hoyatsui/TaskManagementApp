@@ -1,0 +1,121 @@
+.table-container {
+    width: 95%;
+    margin: 20px;
+    border: #ccc solid 1px;
+    padding: 20px;
+}
+
+.table-header {
+    background-color: #ccc;
+    margin: -20px;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-header span {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: #535bb3;
+}
+
+.table-header button {
+    border: none;
+    background-color: #10c59e;
+    color: white;
+}
+
+.control-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.entries-control,
+.sort-controls {
+    display: flex;
+    align-items: center;
+}
+
+.entires-selector {
+    margin: 0 5px;
+}
+
+.control-row select,
+input {
+    margin: 0 10px;
+}
+
+td {
+    padding: 10px 0;
+
+    text-align: left !important;
+}
+
+thead th {
+    color: #a9a6a6 !important;
+    padding: 20px 0;
+    text-align: left !important;
+    font-weight: 500
+}
+
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.quoteid {
+    padding-left: 30px !important;
+}
+
+.tablebody {
+    border-top: solid 2px #6f6f6f;
+    border-bottom: solid 2px #6f6f6f;
+}
+
+i.fa-solid {
+    margin-right: 1rem;
+    color: #a9a6a6;
+    cursor: pointer;
+}
+
+i.fa-bars {
+    color: white;
+    margin-right: 0;
+}
+
+.pagination-btn {
+    background-color: white;
+    border: none;
+}
+
+.table-bot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+}
+
+.pagination-btn {
+    margin: 0 10px;
+}
+
+.page-btn {
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.page-btn[disabled] {
+    background-color: #ccc;
+    color: black;
+}

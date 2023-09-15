@@ -1,0 +1,79 @@
+<!-- <div class="modal-dialog modal-lg"> -->
+<div class="modal-content">
+    <div class="modal-header text-white">
+        <h5 class="modal-title">{{title}}</h5>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="quoteForm">
+            <!-- Quote ID -->
+            <div class="form-group row">
+                <label for="quoteID" class="col-4 col-form-label">Quote ID</label>
+                <div class="col-6">
+                    <input type="number" class="form-control" id="quoteID" formControlName="quoteID" [readonly]="true">
+
+                </div>
+            </div>
+
+            <!-- Quote Type -->
+            <div class="form-group row">
+                <label for="quoteType" class="col-4 col-form-label">Quote Type</label>
+                <div class="col-1">
+                    <select id="quoteType" formControlName="quoteType">
+                        <option value="House">House</option>
+                        <option value="Boat">Boat</option>
+                        <option value="Auto">Auto</option>
+                        <option value="General">General</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Sales -->
+            <div class="form-group row">
+                <label for="sales" class="col-4 col-form-label">Sales</label>
+                <div class="col-6">
+                    <input type="text" class="form-control" id="sales" formControlName="sales" required>
+                    <mat-error *ngIf="quoteForm.get('sales')?.hasError('required') && quoteForm.get('sales')?.touched">
+                        Sales is <strong>required</strong>
+                    </mat-error>
+                </div>
+            </div>
+
+            <!-- Premium -->
+            <div class="form-group row">
+                <label for="premium" class="col-4 col-form-label">Premium</label>
+                <div class="col-6">
+                    <input type="text" class="form-control" id="premium" formControlName="premium">
+                    <mat-error
+                        *ngIf="quoteForm.get('premium')?.hasError('required') && quoteForm.get('premium')?.touched">
+                        Premium is <strong>required</strong>
+                    </mat-error>
+                </div>
+            </div>
+
+            <!-- Due Date -->
+            <div class="form-group row">
+                <label for="dueDate" class="col-4 col-form-label">Due Date</label>
+                <div class="col-6">
+                    <input type="datetime-local" class="form-control" id="dueDate" formControlName="dueDate">
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group row">
+                <label for="description" class="col-4 col-form-label">Description</label>
+                <div class="col-8">
+                    <textarea class="form-control" id="description" rows="2" formControlName="description"></textarea>
+                    <mat-error
+                        *ngIf="quoteForm.get('description')?.hasError('required') && quoteForm.get('description')?.touched">
+                        Description is <strong>required</strong>
+                    </mat-error>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="dialogRef.close()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+    </div>
+</div>
+<!-- </div> -->

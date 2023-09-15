@@ -1,0 +1,8 @@
+mat-dialog-actions {
+    justify-content: end;
+}
+
+.true {
+    color: white !important;
+    background-color: #3f51B5;
+}

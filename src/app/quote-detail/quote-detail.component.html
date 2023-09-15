@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="detail-container container">
+    <div class="row">
+        <div class="col-3">
+            <img class="detail-image" [src]="getImgSource(quote.quoteType)" alt="Image description">
+        </div>
+    </div>
+    <div class="row detial-content">
+        <div class="col-9">
+            <div class="row detail-row">
+                <div class="col-6 text-left detail-name">Quote ID</div>
+                <div class="col-6 text-left">{{ quote.quoteID }}</div>
+            </div>
+            <div class="row detail-row">
+                <div class="col-6 text-left detail-name">Quote Type</div>
+                <div class="col-6 text-left">{{ quote.quoteType }}</div>
+            </div>
+            <div class="row detail-row">
+                <div class="col-6 text-left detail-name">Sales Person</div>
+                <div class="col-6 text-left">{{ quote.sales }}</div>
+            </div>
+            <div class="row detail-row">
+                <div class="col-6 text-left detail-name">Premium Amount</div>
+                <div class="col-6 text-left">{{ quote.premium }}</div>
+            </div>
+
+            <div class="row detail-row">
+                <div class="col-6 text-left detail-name">Due Date</div>
+                <div class="col-6 text-left">{{ quote.formattedDueDate }}</div>
+            </div>
+
+            <div class="row detail-row">
+                <div class="col-6 text-left detail-name">Description</div>
+                <div class="col-6 text-left">{{ quote.description }}</div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

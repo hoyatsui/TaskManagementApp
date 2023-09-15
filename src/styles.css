@@ -1,0 +1,50 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Unselected tab */
+.mdc-tab:not(.mdc-tab--active) {
+    background-color: white;
+    color: #3F51B5;
+    border: 2px solid #3F51B5;
+    /* Your primary color here */
+}
+
+.mdc-tab.mdc-tab--active {
+    background-color: #3F51B5;
+    color: white !important;
+}
+
+.mdc-tab__text-label {
+    font-size: large;
+}
+
+/* Styles for unselected tabs text*/
+.mdc-tab:not(.mdc-tab--active) .mdc-tab__text-label {
+    color: #3F51B5 !important;
+    /* Primary blue */
+}
+
+.mdc-tab.mdc-tab--active .mdc-tab__text-label {
+    color: white !important;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field--filled {
+    background-color: transparent !important;
+}
+
+.my-pagination .ngx-pagination .current {
+    background-color: #a9a6a6 !important;
+}
+
+.mat-snack-bar {
+    --mdc-snackbar-container-color: #3F51B5;
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+    --mat-snack-bar-button-color: white;
+}

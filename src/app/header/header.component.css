@@ -1,0 +1,29 @@
+.header {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+    margin-bottom: 0;
+    margin: 0 20px;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.header-left button {
+    border: none;
+    background-color: white;
+    color: #535BB3;
+    font-size: 24px;
+}
+
+.header-right button {
+    border: none;
+    background-color: white;
+    color: #007BFF;
+    font-size: 18px;
+}

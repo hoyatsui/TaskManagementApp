@@ -1,0 +1,31 @@
+.modal-content {
+    width: auto;
+    margin: 50px;
+}
+
+.modal-header {
+    background-color: #3f51B5;
+}
+
+.form-group {
+    margin: 1rem;
+}
+
+
+
+::ng-deep .modal-dialog.modal-lg {
+    margin: 0 !important;
+}
+
+::ng-deep .modal-dialog {
+    --bs-modal-margin: 0;
+    --bs-modal-width: 95%;
+}
+
+.modal-footer button {
+    margin: 1rem;
+    margin: 0 1rem;
+    border: none;
+    background-color: white;
+    color: black
+}

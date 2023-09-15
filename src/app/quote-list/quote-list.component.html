@@ -1,0 +1,89 @@
+<app-header></app-header>
+<div class="table-container">
+    <div class="table-header">
+        <span>Table Details</span>
+        <button class="add-button" (click)="add()"><i class="fa-solid fa-bars"></i>Add Task</button>
+    </div>
+    <div class="control-row">
+        <div class="entries-control">
+            Show
+            <select class="entires-selector" [(ngModel)]="itemsPerPage" (change)="updateItemsPerPage()">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+            entries
+        </div>
+        <div class="sort-controls">
+            Order By
+            <select [(ngModel)]="selectedColumn" (change)="sortData()">
+                <option value="quoteID">QuoteID</option>
+                <option value="quoteType">Quote Type</option>
+                <option value="sales">Sales</option>
+                <option value="dueDate">Due Date</option>
+                <option value="premium">Premium</option>
+            </select>
+            Descending
+            <input type="checkbox" [(ngModel)]="isDescending" (change)="sortData()">
+            Search
+            <input type="text" [(ngModel)]="searchString" (input)="onSearch()" placeholder="Search">
+
+        </div>
+    </div>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th class="quoteid">Quote ID</th>
+                <th>Quote Type</th>
+                <th>Description</th>
+                <th>Sales</th>
+                <th>Due Date</th>
+                <th>Premium</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="tablebody">
+            <tr *ngFor="let quote of quotes | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+                <td class="quoteid">{{ quote.quoteID }}</td>
+                <td>{{ quote.quoteType }}</td>
+                <td>{{ quote.description }}</td>
+                <td>{{ quote.sales| titlecase }}</td>
+                <td>{{ quote.formattedDueDate }}</td>
+                <td>{{ quote.premium }}</td>
+                <td>
+                    <i class="fa-solid fa-eye" (click)="view(quote.quoteID)"></i>
+                    <i class="fa-solid fa-pen" (click)="edit(quote)"></i>
+                    <i class="fa-solid fa-trash" (click)="delete(quote.quoteID)"></i>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <div class="table-bot">
+        <div>
+            Showing {{(p-1)*itemsPerPage + 1}} to {{p*itemsPerPage < quotes.length? p*itemsPerPage : quotes.length}} of
+                {{quotes.length}} </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn" [disabled]="p === 1" (click)="p = p - 1">Previous</button>
+
+                    <button class="page-btn" [disabled]="p === 1" (click)="p = 1">1</button>
+
+                    <span *ngIf="p - 1 > 2 && maxPage > 5">...</span>
+
+                    <button *ngFor="let page of getDisplayedPages(p, maxPage)" class="page-btn" [disabled]="p === page"
+                        (click)="p = page">
+                        {{ page }}
+                    </button>
+
+                    <span *ngIf="maxPage - p > 2 && maxPage > 5">...</span>
+
+                    <button class="page-btn" [disabled]="p === maxPage || maxPage === 1" (click)="p = maxPage">{{
+                        maxPage }}</button>
+
+                    <button class="pagination-btn" [disabled]="p >= maxPage" (click)="p = p + 1">Next</button>
+                </div>
+
+        </div>
+    </div>

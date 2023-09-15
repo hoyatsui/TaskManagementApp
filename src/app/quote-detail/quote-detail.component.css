@@ -1,0 +1,20 @@
+.detail-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.detail-row {
+    margin-top: 20px;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.detail-name {
+    color: #535bb3;
+    font-weight: 500;
+}
