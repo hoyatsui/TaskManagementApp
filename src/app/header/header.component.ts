@@ -13,7 +13,6 @@ export class HeaderComponent {
         this.router.navigate(['/quotes']);
     }
     logout() {
-        // Implement your logout logic here, such as clearing the JWT token.
         localStorage.removeItem('jwt');
 
         // Redirect to the login page.
