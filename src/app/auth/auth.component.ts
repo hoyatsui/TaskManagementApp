@@ -1,8 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators, ValidationErrors, ValidatorFn, AbstractControl } from '@angular/forms';
 import { AuthService } from 'src/auth.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
+const passwordMatcher: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+    const formGroup = control as FormGroup;
+    const password = formGroup.get('password')?.value;
+    const confirmPassword = formGroup.get('confirmPassword')?.value;
+
+    if (password === confirmPassword) {
+        return null;
+    } else {
+        return { 'passwordMismatch': true };
+    }
+};
 
 @Component({
     selector: 'app-auth',
@@ -26,6 +38,7 @@ export class AuthComponent implements OnInit {
             password: ['', [Validators.required,]],
             confirmPassword: ['', Validators.required]
         });
+        this.registerForm.setValidators(passwordMatcher);
 
     }
     login() {
@@ -70,6 +83,8 @@ export class AuthComponent implements OnInit {
             );
         }
     }
+
+
     openSnackBar(message: string, action: string) {
         this.snackBar.open(message, action, {
             duration: 2000,

@@ -12,7 +12,7 @@ export class PermissionService {
         if (token) {
             return true;
         }
-        this.router.navigate(['/login']);
+        this.router.navigate(['/auth']);
         return false;
     }
 }
